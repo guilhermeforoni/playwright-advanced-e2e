@@ -1,40 +1,38 @@
-# 🚀 Playwright Advanced E2E & Architecture
+# 🎭 Playwright Advanced E2E Automation
 
 [![Playwright](https://img.shields.io/badge/Playwright-1.x-green?logo=playwright)](https://playwright.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js->=18.x-green?logo=node.js)](https://nodejs.org/)
 
-Este repositório é focado em **conceitos avançados de automação de testes End-to-End (E2E)** utilizando **Playwright** e **TypeScript**. O projeto explora arquiteturas escaláveis, recursos avançados do framework e padrões de projeto orientados a alta performance e manutenibilidade.
+Este repositório contém a automação de testes End-to-End (E2E) para o site de e-commerce [Automation Exercise](https://automationexercise.com/), desenvolvida com **Playwright** e **TypeScript**.
+
+O projeto tem como foco validar fluxos de usuário na plataforma web utilizando o padrão de arquitetura **Page Object Model (POM)** e **Fixtures** do Playwright para gerenciamento e inicialização das páginas.
 
 ---
 
-## 🎯 Conceitos e Recursos Avançados Utilizados
+## 🎯 O que foi implementado
 
-- **Custom Fixtures & Dependency Injection:** Extensão do ecossistema de fixtures do Playwright para injetar estados de autenticação, dados dinâmicos e páginas diretamente nos testes sem acoplamento excessivo.
-- **API and UI Hybrid Testing:** Execução de requisições via API (`request` context do Playwright) para *setup* de massa de dados e limpeza rápida de cenários, otimizando o tempo de execução dos testes de interface.
-- **Advanced Page Object Model (POM):** Implementação de herança, encapsulamento rigoroso de componentes e métodos encadeados (*method chaining*).
-- **Network Interception & Mocking (`page.route`):** Simulação de cenários de rede, manipulação de payloads de requisições/respostas e testes de resiliência a falhas de API.
-- **Tracing, Videos & Artifacts Management:** Configuração avançada de rastreamento detalhado para análise profunda de falhas em ambientes de CI/CD.
+- **Target Application:** Testes automatizados direcionados para a plataforma [Automation Exercise](https://automationexercise.com/).
+- **Page Object Model (POM):** Mapeamento e encapsulamento dos elementos e interações das telas (ex: página de produtos, carrinho, login/cadastro) em classes dedicadas.
+- **Custom Fixtures:** Utilização de fixtures do Playwright para instanciar automaticamente as páginas nos cenários de teste, mantendo o código dos testes limpo e enxuto.
+- **Validação de Fluxos E2E:** Automação de cenários como busca/adição de produtos ao carrinho, navegação e cadastro de usuários.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **[Playwright](https://playwright.dev/)**: Motor de automação web e de API moderno e de alta performance.
-- **[TypeScript](https://www.typescriptlang.org/)**: Tipagem estática avançada para contratos de dados e arquitetura de testes robusta.
-- **Node.js**: Ambiente de execução.
+- **[Playwright](https://playwright.dev/)**: Framework para testes End-to-End.
+- **[TypeScript](https://www.typescriptlang.org/)**: Linguagem com tipagem estática.
+- **Node.js**: Ambiente de execução JavaScript/TypeScript.
 
 ---
 
 ## 📂 Estrutura do Projeto
 
 ```text
-├── tests/              # Arquivos de especificações (.spec.ts)
-│   ├── e2e/            # Testes avançados de interface
-│   └── api/            # Testes de integração e contratos
-├── pages/              # Camada de Page Objects avançados
-├── fixtures/           # Fixtures customizadas do Playwright e massas de dados
-├── utils/              # Funções utilitárias, helpers e geradores de dados
-├── playwright.config.ts# Configurações globais avançadas (projects, timeouts, workers, retries)
-├── package.json        # Dependências e scripts de automação
+├── tests/              # Arquivos de especificações de teste (.spec.ts)
+├── pages/              # Classes das páginas (Page Object Model)
+├── fixtures/           # Configuração e inicialização das fixtures das páginas
+├── playwright.config.ts# Configurações globais do Playwright (baseURL, timeout, etc.)
+├── package.json        # Dependências e scripts de execução
 └── README.md           # Documentação do projeto
